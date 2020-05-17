@@ -1,5 +1,5 @@
+
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Competencia {
@@ -54,9 +54,7 @@ public class Competencia {
 
 			i++;
 		}
-
 	}
-
 	public void generarPodioConsistencia() {
 		int i = 0;
 		List<Lanzador> lanzadoresConsistentes = new ArrayList<Lanzador>();
@@ -79,7 +77,6 @@ public class Competencia {
 			if (i == 2) {
 				this.podioConsistencia.setTercerPuesto(lanzadoresConsistentes.get(i).getNumero());
 			}
-
 			i++;
 		}
 
