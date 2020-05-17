@@ -62,8 +62,8 @@ public class Competencia {
 		List<Lanzador> lanzadoresConsistentes = new ArrayList<Lanzador>();
 
 		for (Lanzador lanzador : this.lanzadores) {
-			if (!lanzador.getTiros().get(0).getDescalificado() && !lanzador.getTiros().get(1).getDescalificado()
-					&& !lanzador.getTiros().get(2).getDescalificado()) {
+			if (!lanzador.getTiros().get(0).esTiroDescalificado() && !lanzador.getTiros().get(1).esTiroDescalificado()
+					&& !lanzador.getTiros().get(2).esTiroDescalificado()) {
 				lanzadoresConsistentes.add(lanzador);
 			}
 		}

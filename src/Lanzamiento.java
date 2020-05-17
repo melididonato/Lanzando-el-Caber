@@ -3,13 +3,11 @@ public class Lanzamiento {
 	public double distanciaRecorrida;
 	public double angulo;
 	public double distanciaReal;
-	public boolean descalificado;
 
 	public Lanzamiento(double distanciaRecorrida, double angulo) {
 		this.distanciaRecorrida = distanciaRecorrida;
 		this.angulo = angulo;
 		this.distanciaReal = calcularDistanciaReal();
-		this.descalificado = esTiroDescalificado();
 	}
 
 	public double getAngulo() {
@@ -22,14 +20,6 @@ public class Lanzamiento {
 
 	public double getDistanciaRecorrida() {
 		return distanciaRecorrida;
-	}
-
-	public boolean getDescalificado() {
-		return descalificado;
-	}
-
-	public void setDescalificado(boolean descalificado) {
-		this.descalificado = descalificado;
 	}
 
 	public double calcularDistanciaReal() {
@@ -45,13 +35,11 @@ public class Lanzamiento {
 		return distanciaReal;
 
 	}
-
-	private boolean esTiroDescalificado() {
-		// TODO Auto-generated method stub
-		if ((this.angulo > 90) || (this.angulo < -90)) {
+	
+	public boolean esTiroDescalificado() {
+		if(this.distanciaReal == 0) {
 			return true;
 		}
 		return false;
 	}
-
 }
