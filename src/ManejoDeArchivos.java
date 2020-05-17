@@ -16,6 +16,7 @@ public class ManejoDeArchivos {
 		System.out.println(competencia.podioDistancia.tercerPuesto);
 		competencia.generarPodioConsistencia();
 		System.out.println();
+		System.out.println(competencia.lanzadores.get(0).getNumero());
 		System.out.println(competencia.lanzadores.get(0).getConsistencia());
 		System.out.println(competencia.lanzadores.get(1).getConsistencia());
 		System.out.println(competencia.podioConsistencia.primerPuesto);

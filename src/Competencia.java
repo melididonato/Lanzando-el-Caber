@@ -71,13 +71,13 @@ public class Competencia {
 		lanzadoresConsistentes.sort(new CompararPorConsistencia());
 		while (i < lanzadoresConsistentes.size()) {
 			if (i == 0) {
-				this.podioConsistencia.setPrimerPuesto(lanzadores.get(i).getNumero());
+				this.podioConsistencia.setPrimerPuesto(lanzadoresConsistentes.get(i).getNumero());
 			}
 			if (i == 1) {
-				this.podioConsistencia.setSegundoPuesto(lanzadores.get(i).getNumero());
+				this.podioConsistencia.setSegundoPuesto(lanzadoresConsistentes.get(i).getNumero());
 			}
 			if (i == 2) {
-				this.podioConsistencia.setTercerPuesto(lanzadores.get(i).getNumero());
+				this.podioConsistencia.setTercerPuesto(lanzadoresConsistentes.get(i).getNumero());
 			}
 
 			i++;

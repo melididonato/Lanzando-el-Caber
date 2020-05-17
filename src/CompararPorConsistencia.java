@@ -5,9 +5,9 @@ public class CompararPorConsistencia implements Comparator<Lanzador> {
 	@Override
 	public int compare(Lanzador lanzador1, Lanzador lanzador2) {
 		// TODO Auto-generated method stub
-		if (lanzador1.getConsistencia() - lanzador2.getConsistencia() > 0) {
+		if (lanzador1.getConsistencia() > lanzador2.getConsistencia()) {
 			return -1;
-		} else if (lanzador1.getConsistencia() - lanzador2.getConsistencia() < 0) {
+		} else if (lanzador1.getConsistencia() < lanzador2.getConsistencia()) {
 			return 1;
 		}
 		return 0;
