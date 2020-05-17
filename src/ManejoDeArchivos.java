@@ -32,10 +32,10 @@ public class ManejoDeArchivos {
 			String linea;
 			double distanciaRecorrida, angulo;
 			linea = br.readLine();
-			int cantLanzadores = Integer.parseInt(linea);
-			for (int i = 1; i <= cantLanzadores; i++) {
+			int n = Integer.parseInt(linea);
+			for (int i = 1; i <= n; i++) {
 				ArrayList<Lanzamiento> lanzamiento = new ArrayList<Lanzamiento>();
-				for (int j = 1; j <= 3; j++) {
+				for (int j = 1; j <= n ; j++) {
 					linea = br.readLine();
 					String[] datos = linea.split("\t");
 					distanciaRecorrida = Double.parseDouble(datos[0]);
