@@ -51,5 +51,24 @@ public class CompararPorConsistenciaTest {
 		int comparacion = comparator.compare(lanzadorA, lanzadorB);
 		assertEquals(1, comparacion);
 	}
+	
+	@Test
+	public void CompararPorConsistenciaAMayorQueB() {
+		CompararPorConsistencia comparator = new CompararPorConsistencia();
+		ArrayList<Lanzamiento> tirosB = new ArrayList<Lanzamiento>();
+		Lanzamiento tiro4 = new Lanzamiento(100, 20);
+		Lanzamiento tiro5 = new Lanzamiento(100, 2);
+		Lanzamiento tiro6 = new Lanzamiento(100, 3);
+		tirosB.add(tiro4);
+		tirosB.add(tiro5);
+		tirosB.add(tiro6);
+		Lanzador lanzadorA = new Lanzador(1, tirosB);
+		lanzadorA.setConsistencia(5);
+		
+		Lanzador lanzadorB = new Lanzador(2,tirosB);
+		lanzadorB.setConsistencia(0);
+		int comparacion = comparator.compare(lanzadorA, lanzadorB);
+		assertEquals(-1, comparacion);
+	}
 
 }
