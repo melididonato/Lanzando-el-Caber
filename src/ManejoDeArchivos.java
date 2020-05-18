@@ -9,13 +9,13 @@ public class ManejoDeArchivos {
 
 	public static void main(String[] args) {
 		ArrayList<Lanzador> lanzadores = new ArrayList<Lanzador>();
-		String path = "Archivo2.txt";
+		String path = "ArchivoLoom.txt";
 		leerArchivo(path, lanzadores);
 		Competencia competencia = new Competencia(lanzadores);
 		competencia.generarPodioConsistencia();
 		competencia.generarPodioDistancia();
 		System.out.println();
-		String pathSalida = "Archivo2.out";
+		String pathSalida = "ArchivoLoom.out";
 		generarArchivo(pathSalida, competencia);
 	}
 
