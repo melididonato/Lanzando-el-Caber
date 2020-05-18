@@ -45,22 +45,24 @@ public class Lanzador {
 	public double calcularConsistencia() {
 		double tolerancia = 0.15;
 		double toleranciaAngulos = 5.0;
-		double sumador = 0;
-		for (int i = 1; i < 3; i++) {
-			if (Math.abs(
-					(this.tiros.get(i - 1).getDistanciaReal() - this.tiros.get(i).getDistanciaReal())) < tolerancia) {
-				sumador += 10;
-			} else {
-				sumador -= 10;
+		double resultado = 0;
+		
+		if(!this.tiros.get(0).esTiroDescalificado() && !this.tiros.get(1).esTiroDescalificado() && !this.tiros.get(2).esTiroDescalificado()) {	
+			for (int i = 1; i < 3; i++) {
+				if (Math.abs((this.tiros.get(i - 1).getDistanciaReal() - this.tiros.get(i).getDistanciaReal())) < tolerancia) {
+					resultado += 10;
+				} else {
+					resultado -= 10;
+				}
+			}
+			for (int i = 1; i < 3; i++) {
+				if (Math.abs((this.tiros.get(i - 1).getAngulo() - this.tiros.get(i).getAngulo())) < toleranciaAngulos) {
+					resultado += 10;
+				} else {
+					resultado -= 10;
+				}
 			}
 		}
-		for (int i = 1; i < 3; i++) {
-			if (Math.abs((this.tiros.get(i - 1).getAngulo() - this.tiros.get(i).getAngulo())) < toleranciaAngulos) {
-				sumador += 10;
-			} else {
-				sumador -= 10;
-			}
-		}
-		return sumador;
+		return resultado;
 	}
 }
