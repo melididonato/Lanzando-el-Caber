@@ -46,7 +46,6 @@ public class Lanzador {
 		double tolerancia = 0.15;
 		double toleranciaAngulos = 5.0;
 		double sumador = 0;
-
 		for (int i = 1; i < this.tiros.size(); i++) {
 			if (Math.abs(
 					(this.tiros.get(i - 1).getDistanciaReal() - this.tiros.get(i).getDistanciaReal())) < tolerancia) {
@@ -62,8 +61,6 @@ public class Lanzador {
 				sumador -= 10;
 			}
 		}
-
 		return sumador;
 	}
-
 }
