@@ -17,6 +17,17 @@ public class ManejoDeArchivos {
 		System.out.println();
 		String pathSalida = "Archivo.out";
 		generarArchivo(pathSalida, competencia);
+		
+		///VER SI ESTA BIEN FUNCION DE CONSISTENCIA
+		ArrayList<Lanzamiento> tiros = new ArrayList<Lanzamiento>();
+		Lanzamiento tiro1 = new Lanzamiento(100, 90);
+		Lanzamiento tiro2 = new Lanzamiento(100, 95);
+		Lanzamiento tiro3 = new Lanzamiento(100, 92);
+		tiros.add(tiro1);
+		tiros.add(tiro2);
+		tiros.add(tiro3);
+		Lanzador lanzador = new Lanzador(1, tiros);
+		System.out.println(lanzador.getConsistencia());
 	}
 
 	public static void leerArchivo(String path, ArrayList<Lanzador> lanzadores) {
