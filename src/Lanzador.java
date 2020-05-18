@@ -10,7 +10,7 @@ public class Lanzador {
 		this.numero = numero;
 		this.tiros = tiros;
 		this.sumaDistancias = sumarDistanciasReales();
-		this.setConsistencia(calcularConsistencia());
+		this.consistencia = calcularConsistencia();
 	}
 
 	public int getNumero() {
@@ -44,23 +44,44 @@ public class Lanzador {
 
 	public double calcularConsistencia() {
 		double tolerancia = 0.15;
-		double toleranciaAngulos = 5.0;
+		double toleranciaAngulo = 5.0;
 		double resultado = 0;
-		
 		if(!this.tiros.get(0).esTiroDescalificado() && !this.tiros.get(1).esTiroDescalificado() && !this.tiros.get(2).esTiroDescalificado()) {	
-			for (int i = 1; i < 3; i++) {
-				if (Math.abs((this.tiros.get(i - 1).getDistanciaReal() - this.tiros.get(i).getDistanciaReal())) < tolerancia) {
-					resultado += 10;
-				} else {
-					resultado -= 10;
-				}
+			double distanciaReal1 = this.tiros.get(0).getDistanciaReal();
+			double distanciaReal2 = this.tiros.get(1).getDistanciaReal();
+			double distanciaReal3 = this.tiros.get(2).getDistanciaReal();
+			if(Math.abs(distanciaReal1-distanciaReal2) > tolerancia) {
+				resultado -= 10;
+			} else {
+				resultado += 10;
 			}
-			for (int i = 1; i < 3; i++) {
-				if (Math.abs((this.tiros.get(i - 1).getAngulo() - this.tiros.get(i).getAngulo())) < toleranciaAngulos) {
-					resultado += 10;
-				} else {
-					resultado -= 10;
-				}
+			if(Math.abs(distanciaReal1-distanciaReal3) > tolerancia) {
+				resultado -= 10;
+			} else {
+				resultado += 10;
+			}
+			if(Math.abs(distanciaReal2-distanciaReal3) > tolerancia) {
+				resultado -= 10;
+			} else {
+				resultado += 10;
+			}
+			double angulo1 = this.tiros.get(0).getAngulo();
+			double angulo2 = this.tiros.get(1).getAngulo();
+			double angulo3 = this.tiros.get(2).getAngulo();
+			if(Math.abs(angulo1-angulo2) > toleranciaAngulo) {
+				resultado -= 10;
+			} else {
+				resultado += 10;
+			}
+			if(Math.abs(angulo1-angulo3) > toleranciaAngulo) {
+				resultado -= 10;
+			} else {
+				resultado += 10;
+			}
+			if(Math.abs(angulo2-angulo3) > toleranciaAngulo) {
+				resultado -= 10;
+			} else {
+				resultado += 10;
 			}
 		}
 		return resultado;

@@ -20,9 +20,9 @@ public class ManejoDeArchivos {
 		
 		///VER SI ESTA BIEN FUNCION DE CONSISTENCIA
 		ArrayList<Lanzamiento> tiros = new ArrayList<Lanzamiento>();
-		Lanzamiento tiro1 = new Lanzamiento(100, 90);
-		Lanzamiento tiro2 = new Lanzamiento(100, 95);
-		Lanzamiento tiro3 = new Lanzamiento(100, 92);
+		Lanzamiento tiro1 = new Lanzamiento(100, 5);
+		Lanzamiento tiro2 = new Lanzamiento(100, 2);
+		Lanzamiento tiro3 = new Lanzamiento(100, 2);
 		tiros.add(tiro1);
 		tiros.add(tiro2);
 		tiros.add(tiro3);
