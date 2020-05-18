@@ -14,7 +14,7 @@ public class Competencia {
 	}
 
 	public List<Lanzador> getLanzadores() {
-		return lanzadores;
+		return this.lanzadores;
 	}
 
 	public void setLanzadores(List<Lanzador> lanzadores) {
@@ -38,48 +38,30 @@ public class Competencia {
 	}
 
 	public void generarPodioDistancia() {
-		int i = 0;
-		List<Lanzador> lanzadoresDistancia = lanzadores;
-		lanzadoresDistancia.sort(new CompararPorSumaDistancias());
-		while (i < lanzadoresDistancia.size()) {
-			if (i == 0) {
-				this.podioDistancia.setPrimerPuesto(lanzadores.get(i).getNumero());
-			}
-			if (i == 1) {
-				this.podioDistancia.setSegundoPuesto(lanzadores.get(i).getNumero());
-			}
-			if (i == 2) {
-				this.podioDistancia.setTercerPuesto(lanzadores.get(2).getNumero());
-			}
-
-			i++;
-		}
+		this.lanzadores.sort(new CompararPorSumaDistancias());
+		this.podioDistancia.setPrimerPuesto(this.lanzadores.get(0).getNumero());
+		this.podioDistancia.setSegundoPuesto(this.lanzadores.get(1).getNumero());
+		this.podioDistancia.setTercerPuesto(this.lanzadores.get(2).getNumero());
 	}
+	
 	public void generarPodioConsistencia() {
-		int i = 0;
 		List<Lanzador> lanzadoresConsistentes = new ArrayList<Lanzador>();
-
 		for (Lanzador lanzador : this.lanzadores) {
 			if (!lanzador.getTiros().get(0).esTiroDescalificado() && !lanzador.getTiros().get(1).esTiroDescalificado()
 					&& !lanzador.getTiros().get(2).esTiroDescalificado()) {
 				lanzadoresConsistentes.add(lanzador);
 			}
 		}
-
 		lanzadoresConsistentes.sort(new CompararPorConsistencia());
-		while (i < lanzadoresConsistentes.size()) {
-			if (i == 0) {
-				this.podioConsistencia.setPrimerPuesto(lanzadoresConsistentes.get(i).getNumero());
-			}
-			if (i == 1) {
-				this.podioConsistencia.setSegundoPuesto(lanzadoresConsistentes.get(i).getNumero());
-			}
-			if (i == 2) {
-				this.podioConsistencia.setTercerPuesto(lanzadoresConsistentes.get(i).getNumero());
-			}
-			i++;
+		int cantidadConsistentes = lanzadoresConsistentes.size();
+		if(cantidadConsistentes >= 1) {
+			this.podioConsistencia.setPrimerPuesto(lanzadoresConsistentes.get(0).getNumero());
 		}
-
+		if(cantidadConsistentes >= 2) {
+			this.podioConsistencia.setSegundoPuesto(lanzadoresConsistentes.get(1).getNumero());
+		}
+		if(cantidadConsistentes >= 3) {
+			this.podioConsistencia.setTercerPuesto(lanzadoresConsistentes.get(2).getNumero());
+		}
 	}
-
 }

@@ -26,14 +26,11 @@ public class Lanzamiento {
 		double distanciaReal = 0;
 		if ((this.angulo > 0 && this.angulo < 30) || (this.angulo < 0 && this.angulo > -30)) {
 			distanciaReal = this.distanciaRecorrida;
-		} else if ((this.angulo > 30 && this.angulo < 90) || (this.angulo < -30 && this.angulo > -90)) {
+		} 
+		if ((this.angulo > 30 && this.angulo < 90) || (this.angulo < -30 && this.angulo > -90)) {
 			distanciaReal = (((this.distanciaRecorrida) * 80) / 100);
-
-		} else {
-			distanciaReal = 0;
-		}
+		} 
 		return distanciaReal;
-
 	}
 	
 	public boolean esTiroDescalificado() {
