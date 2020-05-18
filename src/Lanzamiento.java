@@ -15,11 +15,11 @@ public class Lanzamiento {
 	}
 
 	public double getDistanciaReal() {
-		return distanciaReal;
+		return this.distanciaReal;
 	}
 
 	public double getDistanciaRecorrida() {
-		return distanciaRecorrida;
+		return this.distanciaRecorrida;
 	}
 
 	public double calcularDistanciaReal() {
