@@ -39,12 +39,15 @@ public class Competencia {
 	public void generarPodioDistancia() {
 		this.lanzadores.sort(new CompararPorSumaDistancias());
 		int cantidadLanzadores = lanzadores.size();
-		if(cantidadLanzadores >= 1)
+		if(cantidadLanzadores >= 1) {
 			this.podioDistancia.setPrimerPuesto(this.lanzadores.get(0).getNumero());
-		if(cantidadLanzadores >= 2)
-		this.podioDistancia.setSegundoPuesto(this.lanzadores.get(1).getNumero());
-		if(cantidadLanzadores >= 3)
+		}
+		if(cantidadLanzadores >= 2) {
+			this.podioDistancia.setSegundoPuesto(this.lanzadores.get(1).getNumero());
+		}
+		if(cantidadLanzadores >= 3) {
 			this.podioDistancia.setTercerPuesto(this.lanzadores.get(2).getNumero());
+		}
 	}
 	
 	public void generarPodioConsistencia() {
