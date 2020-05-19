@@ -12,18 +12,18 @@ public class CompararPorConsistenciaTests {
 		CompararPorConsistencia comparator = new CompararPorConsistencia();
 		
 		ArrayList<Lanzamiento> tiros = new ArrayList<Lanzamiento>();
-		Lanzamiento tiro1 = new Lanzamiento(100, 20);
-		Lanzamiento tiro2 = new Lanzamiento(100, 2);
-		Lanzamiento tiro3 = new Lanzamiento(100, 3);
+		Lanzamiento tiro1 = new Lanzamiento(100.00, 20.00);
+		Lanzamiento tiro2 = new Lanzamiento(100.00, 2.00);
+		Lanzamiento tiro3 = new Lanzamiento(100.00, 3.00);
 		tiros.add(tiro1);
 		tiros.add(tiro2);
 		tiros.add(tiro3);
 		Lanzador lanzadorA = new Lanzador(1, tiros);
 		
 		ArrayList<Lanzamiento> tirosB = new ArrayList<Lanzamiento>();
-		Lanzamiento tiro4 = new Lanzamiento(100, 20);
-		Lanzamiento tiro5 = new Lanzamiento(100, 2);
-		Lanzamiento tiro6 = new Lanzamiento(100, 3);
+		Lanzamiento tiro4 = new Lanzamiento(100.00, 20.00);
+		Lanzamiento tiro5 = new Lanzamiento(100.00, 2.00);
+		Lanzamiento tiro6 = new Lanzamiento(100.00, 3.00);
 		tirosB.add(tiro4);
 		tirosB.add(tiro5);
 		tirosB.add(tiro6);
@@ -37,9 +37,9 @@ public class CompararPorConsistenciaTests {
 	public void CompararPorConsistenciaBMayorQueA() {
 		CompararPorConsistencia comparator = new CompararPorConsistencia();
 		ArrayList<Lanzamiento> tirosB = new ArrayList<Lanzamiento>();
-		Lanzamiento tiro4 = new Lanzamiento(100, 20);
-		Lanzamiento tiro5 = new Lanzamiento(100, 2);
-		Lanzamiento tiro6 = new Lanzamiento(100, 3);
+		Lanzamiento tiro4 = new Lanzamiento(100.00, 20.00);
+		Lanzamiento tiro5 = new Lanzamiento(100.00, 2.00);
+		Lanzamiento tiro6 = new Lanzamiento(100.00, 3.00);
 		tirosB.add(tiro4);
 		tirosB.add(tiro5);
 		tirosB.add(tiro6);
@@ -56,9 +56,9 @@ public class CompararPorConsistenciaTests {
 	public void CompararPorConsistenciaAMayorQueB() {
 		CompararPorConsistencia comparator = new CompararPorConsistencia();
 		ArrayList<Lanzamiento> tirosB = new ArrayList<Lanzamiento>();
-		Lanzamiento tiro4 = new Lanzamiento(100, 20);
-		Lanzamiento tiro5 = new Lanzamiento(100, 2);
-		Lanzamiento tiro6 = new Lanzamiento(100, 3);
+		Lanzamiento tiro4 = new Lanzamiento(100.00, 20.00);
+		Lanzamiento tiro5 = new Lanzamiento(100.00, 2.00);
+		Lanzamiento tiro6 = new Lanzamiento(100.00, 3.00);
 		tirosB.add(tiro4);
 		tirosB.add(tiro5);
 		tirosB.add(tiro6);
