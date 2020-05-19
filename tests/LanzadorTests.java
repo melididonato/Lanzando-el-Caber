@@ -15,7 +15,7 @@ public class LanzadorTests {
 		tiros.add(tiro2);
 		tiros.add(tiro3);
 		Lanzador lanzador = new Lanzador(1, tiros);
-		assertEquals(300, lanzador.getSumaDistancias(),0);
+		assertEquals(300, lanzador.getSumaDistancias(), 0);
 	}
 	@Test
 	public void queCalculaConsistencia() {
@@ -27,7 +27,7 @@ public class LanzadorTests {
 		tiros.add(tiro2);
 		tiros.add(tiro3);
 		Lanzador lanzador = new Lanzador(1, tiros);
-		assertEquals(60.00, lanzador.getConsistencia(),0);
+		assertEquals(60.00, lanzador.getConsistencia(), 0);
 	}
 	@Test
 	public void queNoEsConsistente() {
@@ -39,6 +39,6 @@ public class LanzadorTests {
 		tiros.add(tiro2);
 		tiros.add(tiro3);
 		Lanzador lanzador = new Lanzador(1, tiros);
-		assertEquals(0.00, lanzador.getConsistencia(),0);
+		assertEquals(0.00, lanzador.getConsistencia(), 0);
 	}
 }
