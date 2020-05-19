@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 
-public class CompararPorConsistenciaTest {
+public class CompararPorConsistenciaTests {
 
 	@Test
 	public void CompararPorConsistenciaDaIgual() {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-public class CompararPorSumaDistanciasTest {
+public class CompararPorSumaDistanciasTests {
 
 	@Test
 	public void CompararDistanciasBMayorQueA() {
